@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  --color-beige: #f5e3cd;
+  --color-red: #f91814;
+  --color-white: #ffffff;
+  --color-black: #1b1b1b;
+  --color-mustard: #ffd750;
+  --color-mustard-dark: #f4a804;
+  --font-modak: "Modak", cursive;
+  --font-mouse-memoirs: "Mouse Memoirs", sans-serif;
+}
+
+:root {
+  --beige: #f5e3cd;
+  --red: #f91814;
+  --white: #ffffff;
+  --black: #1b1b1b;
+  --mustard: #ffd750;
+  --mustard-dark: #f4a804;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--beige);
+  color: var(--black);
+}
+
+body {
+  background-color: var(--beige);
+  color: var(--black);
+  font-family: "Mouse Memoirs", sans-serif;
+  overflow-x: hidden;
+}
+
+.self {
+  padding: 2vw;
+}
+
+.font-modak {
+  font-family: "Modak", cursive;
+}
+
+.font-mouse-memoirs {
+  font-family: "Mouse Memoirs", sans-serif;
+}
+
+.heading600 {
+  font-family: "Modak", cursive;
+  font-size: 35vw;
+}
+
+.heading300 {
+  font-family: "Mouse Memoirs", sans-serif;
+  font-size: 15vw;
+}
+
+.heading180 {
+  text-transform: uppercase;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-size: 9vw;
+}
+
+.text96 {
+  font-family: "Mouse Memoirs", sans-serif;
+  font-size: 4vw;
+  line-height: 1;
+}
+
+.text60 {
+  font-family: "Mouse Memoirs", sans-serif;
+  font-size: 2.8vw;
+}
+
+.text40 {
+  font-family: "Mouse Memoirs", sans-serif;
+  font-size: 1.8vw;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2.5vw var(--white);
+  paint-order: stroke fill;
+}
+
+.text-stroke-180 {
+  -webkit-text-stroke: 1vw var(--white);
+  paint-order: stroke fill;
+}
+
+.text-stroke-180-mustard {
+  -webkit-text-stroke: 1vw #f4a8044d;
+  paint-order: stroke fill;
+}
+
+.text-stroke-small {
+  -webkit-text-stroke: 5px var(--white);
+  paint-order: stroke fill;
+}
+
+.text-stroke-180-menu {
+  -webkit-text-stroke: 1vw var(--white);
+  paint-order: stroke fill;
+}
+
+@media (max-width: 768px) {
+  .text40 {
+    font-size: 5vw;
+  }
+  .text60 {
+    font-size: 6.5vw;
+  }
+  .text96 {
+    font-size: 7.5vw;
+  }
+  .text-stroke-180 {
+    -webkit-text-stroke: 2vw var(--white);
+    paint-order: stroke fill;
+  }
+  .text-stroke-small {
+    -webkit-text-stroke: 3px var(--white);
+    paint-order: stroke fill;
+  }
+}
+
+/* Interactive Peelable Sticker CSS from CRAV Burgers */
+.sticker-container {
+  transform-origin: center;
+  --sticker-start: calc(-1 * var(--sticker-p, 20%));
+  --sticker-end: calc(100% + var(--sticker-p, 20%));
+  --sticker-Peel-distance: calc(
+    var(--sticker-peelback-hover, 30%) * var(--peel-amount, 1)
+  );
+  transform: rotate(var(--peel-direction, 0deg));
+  position: relative;
+  cursor: grab;
+}
+
+.sticker-container:active {
+  cursor: grabbing;
+}
+
+.sticker-container * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}
+
+.sticker-main {
+  clip-path: polygon(
+    var(--sticker-start) var(--sticker-start),
+    var(--sticker-end) var(--sticker-start),
+    var(--sticker-end) var(--sticker-end),
+    var(--sticker-start) var(--sticker-end)
+  );
+  transition: clip-path 0.6s ease-out;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.25));
+}
+
+.sticker-main > * {
+  transform: rotate(calc(-1 * var(--peel-direction, 0deg)));
+}
+
+.sticker-image {
+  transform: rotate(var(--sticker-rotate, 10deg));
+  width: var(--sticker-width, 200px);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sticker-container:hover .sticker-image {
+  transform: rotate(calc(var(--sticker-rotate, 10deg) - 6deg)) scale(1.06);
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4.5s ease-in-out infinite;
+}

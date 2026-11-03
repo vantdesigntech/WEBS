@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" class="sharpsans_96245405-module__S_0vUq__variable sydney_ed2b677e-module__XJDjNq__variable">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KAFÉ Roast &amp; Dessert Chocolatier | The Original Coffee Chocolate</title>
+  <link rel="icon" type="image/png" href="/images/Logo_512.png" />
+  <script src="/js/tailwind-browser.js"></script>
+  <style>
+    @font-face {
+      font-family: sharpSans;
+      src: url('/fonts/SharpSansNo1_Extrabold.ttf') format('truetype');
+      font-display: swap;
+      font-weight: 800;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: sharpSans;
+      src: url('/fonts/SharpSansNo1_Semibold.ttf') format('truetype');
+      font-display: swap;
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: sydney;
+      src: url('/fonts/SydneyAlternate_Regular.otf') format('opentype');
+      font-display: swap;
+      font-weight: 400;
+      font-style: normal;
+    }
+    :root {
+      --font-sharpsans: "sharpSans", Arial, sans-serif;
+      --font-sydney: "sydney", cursive;
+    }
+    body {
+      font-family: var(--font-sharpsans);
+      font-weight: 600;
+      background-color: #3B1707;
+      color: #FFF5D6;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    .font-extrabold {
+      font-family: var(--font-sharpsans);
+      font-weight: 800;
+    }
+    .font-semibold {
+      font-family: var(--font-sharpsans);
+      font-weight: 600;
+    }
+    .font-script {
+      font-family: var(--font-sydney);
+      font-weight: 400;
+    }
+    .bg-dark-brown {
+      background-color: #3B1707;
+    }
+    .text-cream {
+      color: #FFF5D6;
+    }
+    .bg-beige {
+      background-color: #DFD3C3;
+    }
+    .bg-texture {
+      background-image: url('/images/bg-texture2.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .section-wave-top-brown {
+      position: relative;
+    }
+    .section-wave-top-brown::before {
+      content: "";
+      position: absolute;
+      top: -58px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-image: url('/images/ui/wave-brown.svg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .section-wave-top-beige {
+      position: relative;
+    }
+    .section-wave-top-beige::before {
+      content: "";
+      position: absolute;
+      top: -58px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-image: url('/images/ui/wave-beige.svg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 10;
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes marqueeScroll {
+      0% { transform: translate3d(0%, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+    @keyframes floatBar {
+      0%, 100% { transform: translateY(0px) rotate(-1.5deg); }
+      50% { transform: translateY(-12px) rotate(1.5deg); }
+    }
+    @keyframes liquidWave {
+      0%, 100% { transform: translateX(0%) scaleY(1); }
+      50% { transform: translateX(-2.5%) scaleY(1.06); }
+    }
+    @keyframes goldShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animate-spin-slow {
+      animation: spinSlow 18s linear infinite;
+    }
+    .animate-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 26s linear infinite;
+    }
+    .gold-foil-text {
+      background-image: url('/images/gold_foil.webp'), linear-gradient(135deg, #FBE29D 0%, #C8963E 50%, #FDE8A8 100%);
+      background-size: cover;
+      background-position: center;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0px 6px 18px rgba(25, 8, 2, 0.48));
+    }
+    .bar-card-3d {
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+    }
+  </style>
+</head>
+<body class="bg-dark-brown font-semibold text-cream">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

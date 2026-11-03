@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Fff Acidgrotesk';
+  src: url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899e4993d4f9e4bf68a0_FFF-AcidGrotesk-ExtraLight.woff2') format('woff2'),
+       url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899e6461565e02a50b56_FFF-AcidGrotesk-UltraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fff Acidgrotesk';
+  src: url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899ebff895aceb9e2ea4_FFF-AcidGrotesk-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fff Acidgrotesk';
+  src: url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899e1bb14f2f613d8048_FFF-AcidGrotesk-Book.woff2') format('woff2'),
+       url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899ef4c4d77a6dff88b9_FFF-AcidGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fff Acidgrotesk';
+  src: url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899ead660c6b64dde0f7_FFF-AcidGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fff Acidgrotesk';
+  src: url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899e1c0822873d42d061_FFF-AcidGrotesk-ExtraBold.woff2') format('woff2'),
+       url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899e6d20224853852f62_FFF-AcidGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fff Acidgrotesk';
+  src: url('https://cdn.prod.website-files.com/68265b957b542bbddcc21b1d/68a4899efcd6e89e10d83f94_FFF-AcidGrotesk-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --brand-off-white: #f7f7f2;
+    --brand-black: #333333;
+    --brand-gold: #d9b57d;
+    --brand-gold-light: #cbc0ad;
+    --brand-tertiary: #867f78;
+    --brand-green: #47614d;
+    --brand-navy: #261f3e;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #f7f7f2;
+    color: #333333;
+    font-family: 'Fff Acidgrotesk', Tahoma, sans-serif;
+    letter-spacing: 0.04em;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #f7f7f2;
+  }
+}
+
+.font-acid {
+  font-family: 'Fff Acidgrotesk', Tahoma, sans-serif;
+}
+
+/* Custom underline hover effect matching btn-hover-anim="underline" */
+.pulso-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: color 0.25s ease;
+}
+
+.pulso-link:hover {
+  color: #867f78;
+}

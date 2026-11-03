@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "MediumLL";
+  src: url("/fonts/Medium-LL-Book.D4WlX7s_.otf") format("opentype");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url("/fonts/IBMPlexMono-Regular.BCvwfN5l.ttf") format("truetype");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SpotifyMixUI";
+  src: url("/fonts/SpotifyMixUI-Regular-76c92fb1a35c462f73429fa8865163eb.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SpotifyMixUI";
+  src: url("/fonts/SpotifyMixUI-Bold-09c45a3a0ce9d2971e62cb26e97760fb.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-medium: "MediumLL", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ibm: "IBMPlexMono", ui-monospace, SFMono-Regular, monospace;
+  --font-spotify: "SpotifyMixUI", sans-serif;
+
+  --color-almostBlack: #000000;
+  --color-offBlack: #12100e;
+  --color-yellow: #ecfd81;
+  --color-sand: #f5f2ed;
+  --color-lightGrey: #bababa;
+  --color-darkGrey: #2f2f2f;
+
+  --spacing-module-xs: 0.25rem;
+  --spacing-module-sm: 0.5rem;
+  --spacing-module-md: 1rem;
+  --spacing-module-lg: 1.5rem;
+  --spacing-module-xl: 2rem;
+  --spacing-module-2xl: 3rem;
+  --spacing-module-3xl: 5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-medium);
+  font-size: 12px;
+  line-height: 13px;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-medium-ll {
+  font-family: var(--font-medium);
+}
+
+.font-ibm {
+  font-family: var(--font-ibm);
+  font-feature-settings: "ss04" 1;
+}
+
+.font-spotify {
+  font-family: var(--font-spotify);
+}
+
+.text-yellow {
+  color: var(--color-yellow);
+}
+
+.bg-yellow {
+  background-color: var(--color-yellow);
+}
+
+.bg-sand {
+  background-color: var(--color-sand);
+}
+
+.text-offBlack {
+  color: var(--color-offBlack);
+}
+
+.text-lightGrey {
+  color: var(--color-lightGrey);
+}
+
+.bg-darkGrey {
+  background-color: var(--color-darkGrey);
+}
+
+/* Custom scrollbar minimal */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2f2f2f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ecfd81;
+}
+
+@keyframes marqueeTicker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: marqueeTicker 28s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}

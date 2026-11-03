@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* Fenriz Gym Custom Interactions & Webflow IX2 Recreations */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Navigation Hamburger Stripes Animation */
+.page-nav-stripes {
+  pointer-events: none;
+}
+.page-nav-stripes .page-nav-stripe {
+  opacity: 1;
+  transition: 0.22s ease;
+  transition-property: top, opacity, transform;
+}
+.page-nav-stripes .page-nav-stripe:nth-child(1) {
+  top: 8px;
+}
+.page-nav-stripes .page-nav-stripe:nth-child(2) {
+  top: 18px;
+}
+.page-nav-stripes .page-nav-stripe:nth-child(3) {
+  top: 28px;
+}
+.page-nav.is-open .page-nav-stripes .page-nav-stripe:nth-child(2) {
+  opacity: 0;
+}
+.page-nav.is-open .page-nav-stripes .page-nav-stripe:nth-child(1) {
+  top: 18px;
+  transform: rotate(45deg);
+}
+.page-nav.is-open .page-nav-stripes .page-nav-stripe:nth-child(3) {
+  top: 18px;
+  transform: rotate(-45deg);
+}
+.page-nav.is-open .page-nav-content {
+  display: block;
+}
+
+/* Course & Event Grid CSS Variables from Fenriz Webflow */
+.instructors_list {
+  --cols: 3;
+  --gap: 2.875rem;
+  --gap-row: 1.25rem;
+  grid-column-gap: var(--gap);
+  grid-row-gap: var(--gap-row);
+}
+.instructors_item {
+  flex-basis: calc((100% / var(--cols)) - (((var(--cols) - 1) * var(--gap)) / var(--cols)));
+}
+.events_list.is-grid {
+  --cols: 3;
+  --gap: 1.25rem;
+  --gap-row: 1.25rem;
+  grid-column-gap: var(--gap);
+  grid-row-gap: var(--gap-row);
+}
+.events_item.is-card {
+  flex-basis: calc((100% / var(--cols)) - (((var(--cols) - 1) * var(--gap)) / var(--cols)));
+}
+.products_list {
+  --cols: 4;
+  --gap: 1rem;
+  grid-column-gap: var(--gap);
+  grid-row-gap: var(--gap);
+}
+.products_item {
+  flex-basis: calc((100% / var(--cols)) - (((var(--cols) - 1) * var(--gap)) / var(--cols)));
+}
+
+@media screen and (max-width: 991px) {
+  .instructors_list,
+  .events_list.is-grid,
+  .products_list {
+    --cols: 2;
+  }
+}
+@media screen and (max-width: 478px) {
+  .instructors_list,
+  .events_list.is-grid {
+    --cols: 1;
+  }
+  .products_list {
+    --cols: 2;
+  }
+}
+
+/* Signature Fenriz Button Hover Wipe + Neon Gradient Border */
+.button {
+  cursor: pointer;
+  overflow: hidden;
+}
+.button_border {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #F9F383, #F14553, #19477E) 1;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.button_mask {
+  transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+}
+.button:hover .button_mask {
+  transform: scaleX(1);
+}
+.button:hover .button_border {
+  opacity: 1;
+}
+.button.is-secondary:hover {
+  color: #ffffff !important;
+}
+.button:not(.is-secondary):not(.is-quaternary):hover {
+  color: #1c1c1c !important;
+}
+
+/* Course Card B&W to Full-Color Hover Transition */
+.course-card_component {
+  overflow: hidden;
+  cursor: pointer;
+}
+.course-card_img-wrap {
+  overflow: hidden;
+}
+.course-card_img-bw,
+.course-card_img {
+  transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.course-card_component:hover .course-card_img-bw {
+  opacity: 0;
+  transform: scale(1.06);
+}
+.course-card_component:hover .course-card_img {
+  transform: scale(1.06);
+}
+
+/* Hero Neon Gradient Flickering (GSAP animateFlickering equivalent) */
+@keyframes fenrizNeonFlicker {
+  0%, 78%, 100% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.15;
+  }
+  82% {
+    opacity: 0.95;
+  }
+  84% {
+    opacity: 0.1;
+  }
+  86% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 0.25;
+  }
+  90% {
+    opacity: 0.95;
+  }
+  92% {
+    opacity: 0.2;
+  }
+  94% {
+    opacity: 1;
+  }
+}
+
+.home-header_img-gradient {
+  animation: fenrizNeonFlicker 4.5s infinite;
+}
+
+/* Probetraining 3-Layer Fighter Collage Hover & Scroll Effect */
+.probetraining_img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+}
+.probetraining_img.is-img-1 {
+  z-index: 1;
+  opacity: 0.55;
+  transform: translateX(-12px) scale(0.94);
+}
+.probetraining_img.is-img-2 {
+  z-index: 2;
+  opacity: 0.8;
+  transform: translateX(-50%) scale(0.97);
+}
+.probetraining_img.is-img-3 {
+  z-index: 3;
+  opacity: 1;
+  transform: translateX(8px) scale(1);
+}
+.probetraining_img-wrap:hover .probetraining_img.is-img-1 {
+  transform: translateX(-28px) rotate(-3deg) scale(0.95);
+  opacity: 0.75;
+}
+.probetraining_img-wrap:hover .probetraining_img.is-img-2 {
+  transform: translateX(-50%) translateY(-8px) scale(0.99);
+  opacity: 0.9;
+}
+.probetraining_img-wrap:hover .probetraining_img.is-img-3 {
+  transform: translateX(22px) rotate(2deg) scale(1.03);
+}
+
+/* Shop Product Hover Effect */
+.product_component img {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.product_component:hover img {
+  transform: translateY(-8px) scale(1.05) rotate(-1.5deg) !important;
+}
+
+/* Brand Element Reveal Animation */
+.brand-element_mask {
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+  transform-origin: 100% 50%;
+}
+.brand-element_mask.is-revealed {
+  transform: scaleX(0);
+}
+
+/* Divider Parallax Zoom */
+.divider_img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.section_divider:hover .divider_img {
+  transform: scale(1.05);
+}
+
+/* Footer Link Underline Hover */
+.footer_link {
+  position: relative;
+}
+.nav_link-underline {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #f9f383, #f14553 50%, #19477e);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  margin-top: 2px;
+}
+.footer_link:hover .nav_link-underline {
+  transform: scaleX(1);
+}

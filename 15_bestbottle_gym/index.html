@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEST BOTTLE BEST GYM | Bauhaus Cryo-Lock™ Gym Hydration</title>
+    <link rel="icon" type="image/png" href="/assets/logo-bbbc.png" />
+    <script src="/js/tailwind-browser.js"></script>
+    <style>
+      @font-face {
+        font-family: 'Helvetica Now Display';
+        src: url('/fonts/HelveticaNowDisplay-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Helvetica Now Display';
+        src: url('/fonts/HelveticaNowDisplay-Medium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Helvetica Now Display';
+        src: url('/fonts/HelveticaNowDisplay-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Helvetica Now Display';
+        src: url('/fonts/HelveticaNowDisplay-ExtBlk.woff2') format('woff2');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope.woff2') format('woff2');
+        font-weight: 400 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --bg-cream: #FCFBF7;
+        --bg-sand: #EDEAE2;
+        --ink: #151515;
+        --bauhaus-yellow: #F4D738;
+        --bauhaus-mustard: #E2BD1B;
+        --bauhaus-navy: #272974;
+        --bauhaus-rose: #A45B63;
+        --bauhaus-rust: #9B4719;
+        --bauhaus-green: #009B4D;
+        --bauhaus-pink: #F396A6;
+        --bauhaus-teal: #40A4B8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: #FCFBF7;
+        color: #151515;
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background-color: #FCFBF7;
+        color: #151515;
+        overflow-x: hidden;
+      }
+
+      .font-display {
+        font-family: 'Helvetica Now Display', 'Helvetica Neue', Arial, sans-serif;
+      }
+
+      .font-body {
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      @keyframes bbbcMarquee {
+        0% {
+          transform: translate3d(0%, 0, 0);
+        }
+        100% {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      .animate-bbbc-marquee {
+        display: flex;
+        width: max-content;
+        animation: bbbcMarquee 26s linear infinite;
+      }
+
+      .animate-bbbc-marquee:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes floatBottle {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      .animate-float-bottle {
+        animation: floatBottle 4.2s ease-in-out infinite;
+      }
+
+      /* Letter tile flip swap */
+      .letter-tile {
+        position: relative;
+        overflow: hidden;
+      }
+      .letter-tile .img-front {
+        transition: opacity 0.22s ease, transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .letter-tile .img-flip {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transform: scale(0.92);
+        transition: opacity 0.22s ease, transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .letter-tile:hover .img-front {
+        opacity: 0;
+        transform: scale(1.06);
+      }
+      .letter-tile:hover .img-flip {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

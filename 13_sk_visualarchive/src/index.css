@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #090909;
+  color: #efefef;
+}
+
+.font-archive-mono {
+  font-family: "Space Mono", ui-monospace, monospace;
+}

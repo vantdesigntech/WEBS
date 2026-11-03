@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('https://likova.space/assets/fonts/tt-norms-pro-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Norms Pro';
+  src: url('https://likova.space/assets/fonts/tt-norms-pro-normal.woff2') format('woff2');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-deep: #070b20;
+  --bg-surface: #232739;
+  --bg-light: #e3e6eb;
+  --text-muted: #bdbec4;
+  --border-slate: #393c4d;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'TT Norms Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #070b20;
+  color: #ffffff;
+}
+
+.font-tt {
+  font-family: 'TT Norms Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Architectural grid lines */
+.arch-grid-bg {
+  background-size: 80px 80px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070b20;
+}
+::-webkit-scrollbar-thumb {
+  background: #393c4d;
+}
