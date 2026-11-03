@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-terminal: #070809;
+    --bg-panel: #0d0f12;
+    --border-mule: #23272e;
+    --border-active: #ff5500;
+    --accent-orange: #ff5500;
+    --accent-amber: #e6a100;
+    --text-white: #f0f2f5;
+    --text-dim: #767f8d;
+    --text-mono: #a0aec0;
+  }
+
+  body {
+    background-color: var(--bg-terminal);
+    color: var(--text-white);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Scanline and industrial CRT effect */
+.scanline-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Blueprint crosshair grid */
+.tech-grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.tech-grid-dense {
+  background-size: 12px 12px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 85, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 85, 0, 0.08) 1px, transparent 1px);
+}
+
+/* Custom scrollbar industrial */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2e37;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5500;
+}
